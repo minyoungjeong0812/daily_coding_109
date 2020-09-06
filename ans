@@ -1,0 +1,30 @@
+# my 1st try
+
+input: 8bit integer
+output:swapped 8bit intger.
+algorithm : swap even and odd bits
+
+example: 10101010 swapped to 01010101.
+
+We assume that the input is always given.
+simple case: all 0's or all 1's.
+
+
+## brute force way
+
+mydict={}
+for x,y in enumerate input_digit:
+   mydict[x] = y
+
+# mydict = {0:1, 1:0, 2:1,...} for 10101010 input
+
+# 0th integer will be swapped with 1st integer
+# 2nd integer will be swapped with 3rd integer
+
+ans=[]
+for i in range(len(input_digit)):
+  if i%2==0:
+    ans.append(mydict[i+1])  
+  else:
+    ans.append(mydict[i-1])
+
