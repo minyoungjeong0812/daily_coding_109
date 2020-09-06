@@ -28,3 +28,27 @@ for i in range(len(input_digit)):
   else:
     ans.append(mydict[i-1])
 
+
+## fine tuned brute force
+input_digit=10101010
+
+input_digit=str(input_digit)
+
+mydict={}
+for x,y in enumerate(input_digit):
+   mydict[x] = y
+
+# mydict = {0:1, 1:0, 2:1,...} for 10101010 input
+
+# 0th integer will be swapped with 1st integer
+# 2nd integer will be swapped with 3rd integer
+
+ans=[]
+for i in range(len(input_digit)):
+  if i%2==0:
+    ans.append(mydict[i+1])
+  else:
+    ans.append(mydict[i-1])
+
+ans_joined=','.join(ans).replace(',','')
+print(ans_joined)
